@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 class BirthdaysTableViewController: UITableViewController {
 
@@ -79,6 +80,13 @@ class BirthdaysTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if birthdays.count > indexPath.row {
             let birthday = birthdays[indexPath.row]
+            
+// Удаляем уведомление о день рождении, при удалении ячейки:
+            if let identifier = birthday.birthdayId {
+                let center = UNUserNotificationCenter.current()
+                center.removePendingNotificationRequests(withIdentifiers: [identifier])
+            }
+            
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
             context.delete(birthday)
