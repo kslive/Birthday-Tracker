@@ -69,5 +69,29 @@ class BirthdaysTableViewController: UITableViewController {
         
         return cell
     }
+    
+// Функция позволяющая редактировать ячейки таблицы:
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+  
+// Удаление ячеек:
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if birthdays.count > indexPath.row {
+            let birthday = birthdays[indexPath.row]
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            context.delete(birthday)
+            birthdays.remove(at: indexPath.row)
+            
+            do {
+                try context.save()
+            } catch let error {
+                print("Не удалось сохранить из-за ошибки \(error).")
+            }
+            
+            tableView.deleteRows(at:[indexPath],with: .fade)
+        }
+    }
 
 }
