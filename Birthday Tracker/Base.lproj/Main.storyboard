@@ -40,12 +40,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6qU-U0-0AW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="202.89855072463769" y="118.52678571428571"/>
+            <point key="canvasLocation" x="471" y="119"/>
         </scene>
         <!--Add Birthdays-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Birthday_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AddBirthdayViewController" customModule="Birthday_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -110,9 +110,22 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Birthdays" id="P4H-Dy-sNf">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ngO-qW-hhg"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="MPj-R3-ufZ"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ngO-qW-hhg">
+                            <connections>
+                                <action selector="cancelTapped:" destination="BYZ-38-t0r" id="DHh-2F-Lfn"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="MPj-R3-ufZ">
+                            <connections>
+                                <action selector="saveTapped:" destination="BYZ-38-t0r" id="LmV-ga-ljs"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="birthdatePicker" destination="sBj-dW-2vV" id="huN-FO-Ds8"/>
+                        <outlet property="firstNameTextField" destination="CIJ-GE-wK1" id="8UU-RP-zry"/>
+                        <outlet property="lastNameTextField" destination="2Kc-NO-8rV" id="sl2-cB-BRn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -134,7 +147,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="enA-o1-9uo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-707.24637681159425" y="118.52678571428571"/>
+            <point key="canvasLocation" x="-226" y="119"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0sq-Qu-S68">
@@ -152,7 +165,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Npe-OM-ACq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="118.52678571428571"/>
+            <point key="canvasLocation" x="1165" y="119"/>
         </scene>
     </scenes>
 </document>
