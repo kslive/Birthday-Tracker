@@ -6,20 +6,14 @@
 //  Copyright © 2020 Eugene Kiselev. All rights reserved.
 //
 
-import UIKit
-
-// Передача объекта классу-делегату:
-protocol AddBirthdayViewControllerDelegate {
-func addBirthdayViewController(_ addBirthdayViewController: AddBirthdayViewController, didAddBirthday birthday: Birthday)
-}
+import UIKit;
+import CoreData
 
 class AddBirthdayViewController: UIViewController {
 
     @IBOutlet var firstNameTextField:  UITextField!
     @IBOutlet var lastNameTextField: UITextField!
     @IBOutlet var birthdatePicker: UIDatePicker!
-    
-    var delegate: AddBirthdayViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,14 +26,28 @@ class AddBirthdayViewController: UIViewController {
         let firstName = firstNameTextField.text ?? ""
         let lastName = lastNameTextField.text ?? ""
         let birthdate = birthdatePicker.date
+
+// Контекст управляемого объекта:
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
         
-// Формируем экземпляр класса:
-        let newBirthday = Birthday(firstName: firstName,
-                                   lastName: lastName,
-                                   birthdate: birthdate)
+        let newBirthday = Birthday(context: context)
+        newBirthday.firstName = firstName
+        newBirthday.lastName = lastName
+        newBirthday.birthdate = birthdate as NSDate? as Date?
+        newBirthday.birthdayId = UUID().uuidString
+        if let uniqueId = newBirthday.birthdayId {
+            print("birthdayId: \(uniqueId)")
+        }
         
-// Передаем делегату значение Birthday:
-        delegate?.addBirthdayViewController(self, didAddBirthday: newBirthday)
+// Сохранение:
+        do{
+            try context.save()
+        } catch let error {
+            print("Не удалось сохранить из-за ошибки \(error).")
+        }
+    
+    
         dismiss(animated: true, completion: nil)
     }
     
