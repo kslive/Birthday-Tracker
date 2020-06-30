@@ -15,6 +15,7 @@
 		6B9DDFE324AB2469004DC7C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B9DDFE224AB2469004DC7C3 /* Assets.xcassets */; };
 		6B9DDFE624AB2469004DC7C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B9DDFE424AB2469004DC7C3 /* LaunchScreen.storyboard */; };
 		6B9DDFEE24AB30EA004DC7C3 /* Birthdays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9DDFED24AB30EA004DC7C3 /* Birthdays.swift */; };
+		6B9DDFF024AB3D15004DC7C3 /* BirthdaysTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9DDFEF24AB3D15004DC7C3 /* BirthdaysTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		6B9DDFE524AB2469004DC7C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B9DDFE724AB2469004DC7C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B9DDFED24AB30EA004DC7C3 /* Birthdays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Birthdays.swift; sourceTree = "<group>"; };
+		6B9DDFEF24AB3D15004DC7C3 /* BirthdaysTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdaysTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				6B9DDFD624AB2466004DC7C3 /* AppDelegate.swift */,
 				6B9DDFD824AB2466004DC7C3 /* SceneDelegate.swift */,
 				6B9DDFDA24AB2466004DC7C3 /* AddBirthdayViewController.swift */,
+				6B9DDFEF24AB3D15004DC7C3 /* BirthdaysTableViewController.swift */,
 				6B9DDFED24AB30EA004DC7C3 /* Birthdays.swift */,
 				6B9DDFDC24AB2466004DC7C3 /* Main.storyboard */,
 				6B9DDFE224AB2469004DC7C3 /* Assets.xcassets */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B9DDFF024AB3D15004DC7C3 /* BirthdaysTableViewController.swift in Sources */,
 				6B9DDFDB24AB2466004DC7C3 /* AddBirthdayViewController.swift in Sources */,
 				6B9DDFEE24AB30EA004DC7C3 /* Birthdays.swift in Sources */,
 				6B9DDFD724AB2466004DC7C3 /* AppDelegate.swift in Sources */,
